@@ -1,6 +1,6 @@
 class ProcesadorDeInputs:
 	def __init__(self, data_input):
-		self.tipo = data_input["cuenta"]
+		self.tipo = data_input["tipo"]
 		self.nombre = data_input['nombre']
 		self.apellido = data_input['apellido']
 		self.numero = data_input['numero']
@@ -12,10 +12,12 @@ class ProcesadorDeInputs:
 		self.ciudad = data_input['direccion']["ciudad"]
 		self.provincia = data_input["direccion"]["provincia"]
 		self.pais = data_input["direccion"]["pais"]
+		self.direccion = f"{self.calle}, {self.numero}, {self.ciudad}, {self.provincia}, {self.pais}"
 		
 		# Transacciones
+		self.transacciones = data_input["transacciones"]
 		self.estado = data_input["transacciones"][0]["estado"]
-		self.tipo_de_transaccion = data_input["transacciones"][0]["cuenta"]
+		# self.tipo_de_transaccion = data_input["transacciones"][0]["cuenta"]
 		self.cuenta_numero = data_input["transacciones"][0]["cuentaNumero"]
 		self.cupo_diario_restante = data_input["transacciones"][0]["cupoDiarioRestante"]
 		self.cantidad_extracciones_hechas = data_input["transacciones"][0]["cantidadExtraccionesHechas"]

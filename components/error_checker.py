@@ -54,4 +54,5 @@ class ErrorChecker:
 		if self.cuenta.tipo_de_transaccion == "COMPRAR_DOLAR": self.__chequeo_comprar_dolar()
 		if self.cuenta.tipo_de_transaccion == "TRANSFERENCIA_ENVIADA": self.__chequeo_transferencia_enviada()
 		if self.cuenta.tipo_de_transaccion == "TRANSFERENCIA_RECIBIDA": self.__chequeo_transferencia_recibida()
+		
 		else: return "No es posible detectar el error. Por favor comuniquese con nuestra sucursal mas cercana."

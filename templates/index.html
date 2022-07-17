@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>FLASK APP</title>
+</head>
+<body>
+
+<h1>Registro de transacciones de clientes</h1>
+{# Datos del cliente #}
+<h2>Datos del cliente:</h2>
+<p><b>Nombre completo: </b>{{ app.usuario.nombre }} {{ app.usuario.apellido }}.</p>
+<p><b>DNI: </b>{{ app.usuario.dni }}</p>
+<p><b>Direccion: </b>{{ app.usuario.direccion }} </p>
+
+
+{# Transacciones #}
+<h2>Transacciones </h2>
+<br>
+{#<p>{{ app.usuario.transacciones }}</p>#}
+
+{% for transaccion in app.usuario.transacciones %}
+	<h3>{{ transaccion.tipo | title | replace("_", " ") }}</h3>
+
+	<p><b>Monto</b>: ${{ transaccion.monto | title }}</p>
+	<p><b>Estado</b>: {{ transaccion.estado | title }}</p>
+	<p><b>Fecha y hora</b>: {{ transaccion.fecha }}</p>
+	<p>{{ app }}</p>
+
+
+	<br>
+
+
+{% endfor %}
+
+
+</body>
+</html>
