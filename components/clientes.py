@@ -1,5 +1,17 @@
-# TODO Agregar clase Cuenta
+# TODO Agregar clase Cuent
+
 class Clientes:
+	@staticmethod
+	def crear_tipo_de_cuenta(usuario):
+		if usuario.tipo == "BLACK":
+			return Black()
+		
+		if usuario.tipo == "GOLD":
+			return Gold()
+		
+		if usuario.tipo == "CLASSIC":
+			return Classic()
+	
 	# TODO Revisar las funciones
 	def puede_crear_chequera(self):
 		return True if self.limite_chequeras > 0 else False
@@ -11,7 +23,7 @@ class Clientes:
 		return True if self.caja_de_ahorro_dolares else False
 	
 	def retiro_efectivo_cajero_automatico(self, cantidad_a_retirar):
-		"""Revisa si el usuario dispone saldo en cuenta corriente y caja de ahorro y realiza los retiros por cajero"""
+		"""Revisa si el user dispone saldo en cuenta corriente y caja de ahorro y realiza los retiros por cajero"""
 		
 		# Condiciones
 		# No supere el monto permitido de extraccion
@@ -27,7 +39,7 @@ class Clientes:
 		print(f"La cantidad reditarda es de {cantidad_a_retirar}, el saldo de la caja de ahorro es de {self.caja_de_ahorro_en_pesos}")
 	
 	def alta_tarjeta_credito(self):
-		"""Revisa si el usuario puede dar de alta una tarjeta de credito y si cumple con los requisitos la crea"""
+		"""Revisa si el user puede dar de alta una tarjeta de credito y si cumple con los requisitos la crea"""
 		
 		if not self.limite_tarjetas_credito: return f"No es posible asignarle una tarjeta de credito."
 		
@@ -35,7 +47,7 @@ class Clientes:
 		return f"La tarjeta de credito fue creada perfectamente. Tarjetas restantes: {self.limite_tarjetas_credito}."
 	
 	def alta_chequera(self):
-		"""Revisa si el usuario puede crear una chequera y si cumple los requisitos la crea"""
+		"""Revisa si el user puede crear una chequera y si cumple los requisitos la crea"""
 		
 		if not self.puede_crear_chequera(): return f"No es posible asignarle una chequera."
 		
