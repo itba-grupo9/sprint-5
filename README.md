@@ -5,7 +5,10 @@ clases.
 Tambien utilizamos el microframework Flask para generar el HTML en solo unas pocas lineas de codigo. Tambien utilizamos el sistema de plantillas Jinja2 para
 mostrar al usuario la informacion requerida de manera estilizada.   
 
+# Instalar previamente
 
+-flask
+-request
 
 ## App
 La aplicacion genera un usuario con la informacion brindada por la API, generando un tipo de cuenta para ese usuario de acuerdo al tipo de cliente que sea y 
