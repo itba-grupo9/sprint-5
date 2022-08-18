@@ -1,5 +1,3 @@
-# TODO Agregar clase Cuent
-
 class Clientes:
 	@staticmethod
 	def crear_tipo_de_cuenta(usuario):
